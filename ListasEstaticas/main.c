@@ -1,21 +1,24 @@
 #include<stdio.h>
 
-// Remover, Buscar, Fim de Fila
+#define LIST_SIZE 10
+
+// Fim de Fila
 
 // Container de dados é só de INTEIROS
-int myList[10];
+int myList[LIST_SIZE];
+int emptyIndicator = -1;
 
 void startList(){
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < LIST_SIZE; i++)
     {
-        myList[i] = 0;
+        myList[i] = emptyIndicator;
     }    
 }
 
 // Imprimir Lista
 void printList(int list[]){
     printf("Index\t\t=>\tValue\n");
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < LIST_SIZE; i++)
     {
         printf("%d\t\t=>\t%d\n", i, list[i]);
     }
@@ -24,10 +27,10 @@ void printList(int list[]){
 
 void insertDataToList(int data){
     // Pesquisar um slot do vetor livre.
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < LIST_SIZE; i++)
     {
         // Teste pra identificar se o slot do vetor está livre
-        if(myList[i] == 0){
+        if(myList[i] == emptyIndicator){
             // Atribuição / Inserção de valor na lista
             myList[i] = data;
             break;
@@ -36,7 +39,7 @@ void insertDataToList(int data){
 }
 
 int searchData(int data){
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < LIST_SIZE; i++)
     {
         if(myList[i] == data){
             return i;
@@ -46,12 +49,12 @@ int searchData(int data){
 }
 
 void removeDataByIndex(int index){
-    for (int i = index; i < (10-1); i++)
+    for (int i = index; i < (LIST_SIZE-1); i++)
     {
         // Trazendo o valor do slot seguinte pro slot atual do for
         myList[i] = myList[i+1];
     }
-    myList[9] = 0;
+    myList[9] = emptyIndicator;
 }
 
 
