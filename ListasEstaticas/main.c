@@ -64,6 +64,11 @@ void removeDataByValue(int data){
     removeDataByIndex(indexToRemove);
 }
 
+int endOfList(int list[]){
+    int firstEmptySlot = searchData(emptyIndicator);
+    return (firstEmptySlot-1);
+}
+
 
 int main(int argc, char const *argv[])
 {
@@ -87,5 +92,6 @@ int main(int argc, char const *argv[])
     removeDataByValue(4);
     printList(myList);
 
+    printf("The last value is on slot %d\n", endOfList(myList));
     return 0;
 }
