@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
                      {1,2,3,4,5},
                      {1,2,3,4,5},
                      {1,2,3,4,5}};
-
+    int sum=0;
     printf("printing main diagonal\n");
     for (int i = 0; i < 5; i++)
     {
@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
         }
     }
     
-    printf("printing secondary diagonal\n");
+    printf("\nprinting secondary diagonal\n");
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 5; j++)
@@ -37,6 +37,19 @@ int main(int argc, char const *argv[])
             if (j == (5-i))
             {
                 printf("%d ", mat[i][j]);
+            }
+        }
+    }
+
+    printf("\nprinting sum of line 4\n");
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 5; j++)
+        {
+            if (i == 3) // the fourth line.... 
+            {
+                sum += mat[i][j];
+                printf("The sum of the fourth line is: %d\n", sum);
             }
         }
     }
