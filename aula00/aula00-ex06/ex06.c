@@ -16,6 +16,14 @@ int main(int argc, char const *argv[])
 
     int xAxisSize=0, yAxisSize=0;
 
+    // Ask user to tell me what are the dimensions of the matrix to multiply
+    printf("Qual a dimensão em x da matriz?\n");
+    scanf("%d", xAxisSize);
+    printf("\nQual a dimensão em y da matriz?\n");
+    scanf("%d", yAxisSize);
+
+    
+
     int j = 0; //Second for loop counter initial value
 
     for (int i = 0; i < xAxisSize; i++)
