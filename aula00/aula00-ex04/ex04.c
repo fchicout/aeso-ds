@@ -11,12 +11,12 @@ Dada uma matriz 5x5, elabore um algoritmo que imprima:
 
 int main(int argc, char const *argv[])
 {
-    int mat[5][5] = {{1,2,3,4,5}, 
-                     {1,2,3,4,5},
-                     {1,2,3,4,5},
-                     {1,2,3,4,5},
-                     {1,2,3,4,5}};
-    int sum=0;
+    int mat[5][5] = {{1, 2, 3, 4, 5},
+                     {1, 2, 3, 4, 5},
+                     {1, 2, 3, 4, 5},
+                     {1, 2, 3, 4, 5},
+                     {1, 2, 3, 4, 5}};
+    int sum = 0;
     printf("printing main diagonal\n");
     for (int i = 0; i < 5; i++)
     {
@@ -28,33 +28,32 @@ int main(int argc, char const *argv[])
             }
         }
     }
-    
+
     printf("\nprinting secondary diagonal\n");
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 5; j++)
         {
-            if (j == (5-i))
+            if (j == (5 - i))
             {
                 printf("%d ", mat[i][j]);
             }
         }
     }
 
-    printf("\nprinting sum of line 4\n");
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 5; j++)
         {
-            if (i == 3) // the fourth line.... 
+            if (i == 3) // the fourth line....
             {
                 sum += mat[i][j];
-                printf("The sum of the fourth line is: %d\n", sum);
             }
         }
     }
-    
-    printf("\nprinting main diagonal\n");
+    printf("The sum of the fourth line is: %d\n", sum);
+
+    printf("\nprinting matrix WITHOUT main diagonal\n");
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 5; j++)
@@ -62,10 +61,13 @@ int main(int argc, char const *argv[])
             if (i != j)
             {
                 printf("%d ", mat[i][j]);
-            } else {
-                printf(" - ");
+            }
+            else
+            {
+                printf("- ");
             }
         }
+            printf("\n");
     }
     return 0;
 }
