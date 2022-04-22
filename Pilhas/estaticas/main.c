@@ -3,8 +3,8 @@
  * Criar uma pilha
  * Empilhar (push)
  * Desempilhar (pop)
- * Tamanho (size)
- * estaVazia (isEmpty)
+ * Tamanho (size) (Done!)
+ * estaVazia (isEmpty) (Done!)
  * Liberar Pilha da memória (freeStack)
  */
 
@@ -25,7 +25,9 @@ int stackSize(Stack s){
     return s.stackSize;
 }
 
-
+int isStackEmpty(Stack s){
+    return (s.stackSize == 0);
+}
 
 
 
