@@ -36,7 +36,7 @@ void imprimir(Lista *inicio)
     }
 }
 
-Lista* removeNoLista(Lista *ref, int valor)
+Lista *removeNoLista(Lista *ref, int valor)
 {
     Lista *ant = NULL;
     Lista *p = ref;
@@ -56,6 +56,18 @@ Lista* removeNoLista(Lista *ref, int valor)
     return ref;
 }
 
+void libera(Lista **lista)
+{
+    Lista *l = *lista;
+
+    while (l != NULL)
+    {
+        Lista *aux = l->prox;
+        free(l);
+        l = aux;
+    }
+    *lista = NULL;
+}
 
 int main(int argc, char const *argv[])
 {
