@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct task
 {
@@ -14,10 +15,15 @@ typedef struct
     int stackSize;
 } Stack;
 
-
+Stack* createStack(){
+    Stack* stack = (Stack*) malloc(sizeof(Stack));
+    stack->stackSize = 0;
+    return stack;
+}
 
 int main(int argc, char const *argv[])
 {
-    /* code */
+    // Stack* stack = createStack();
+    // printf("Stack size: %d\n", stack->stackSize);
     return 0;
 }
