@@ -3,22 +3,31 @@
 
 struct task
 {
-    char* titulo;
-    char* responsavel;
+    char *titulo;
+    char *responsavel;
     struct task *upNext;
 };
 typedef struct task Task;
 
-typedef struct 
+typedef struct
 {
-    Task* bottom, top;
+    Task *bottom, *top;
     int stackSize;
 } Stack;
 
-Stack* createStack(){
-    Stack* stack = (Stack*) malloc(sizeof(Stack));
+Stack *createStack()
+{
+    Stack *stack = (Stack *)malloc(sizeof(Stack));
+    stack->top = NULL;
+    stack->bottom = stack->top;
     stack->stackSize = 0;
     return stack;
+}
+
+void push(Stack *stack, Task *task)
+{
+    stack->top->upNext = task;
+    stack->stackSize = stack->stackSize + 1;
 }
 
 int main(int argc, char const *argv[])
