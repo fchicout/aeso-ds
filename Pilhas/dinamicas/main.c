@@ -27,8 +27,18 @@ Stack *createStack()
 void push(Stack *stack, Task *task)
 {
     stack->top->upNext = task;
+    stack->top = task;
     stack->stackSize = stack->stackSize + 1;
+    if (stack->stackSize == 0)
+    {
+        stack->bottom = task;
+    }
 }
+
+void pop(Stack *stack){
+    
+}
+
 
 int main(int argc, char const *argv[])
 {
